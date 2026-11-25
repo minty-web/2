@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gridhaul — Smart EV charging for delivery fleets</title>
+  <meta name="description" content="Gridhaul plans and balances overnight charging across your depot, so every electric van leaves fully charged and your energy bill drops.">
+  <meta name="theme-color" content="#07090d">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gridhaul — Every van charged before the first drop">
+  <meta property="og:description" content="Smart charging for electric delivery fleets. A concept product site.">
+  <meta property="og:image" content="https://minty-web.github.io/2/preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Gridhaul, back to top">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 2 28 9v14l-12 7-12-7V9z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M17.5 8 11 17.5h5L14.5 24 21 14.5h-5z" fill="#c6ff3d"/>
+        </svg>
+        <span>gridhaul</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#savings">Savings</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-small btn-outline header-cta" href="#pilot">Book a demo</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill"><span class="pill-tag">New</span> Load balancing for 400&nbsp;kW depots</p>
+          <h1 class="hero-title">Every van charged. <span class="gradient-text">Before the first drop.</span></h1>
+          <p class="hero-lede">
+            Gridhaul plans overnight charging across your whole depot from tomorrow’s
+            routes. Long routes charge first, the grid connection never trips, and
+            you pay night rates for night work.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pilot">Start a free pilot</a>
+            <a class="btn btn-ghost" href="#how">See how it works <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="hero-note">30-day pilot · works with the chargers you already have</p>
+        </div>
+
+        <div class="dash" role="img" aria-label="Product preview: a live depot dashboard showing van charge levels, site load and energy used today.">
+          <div class="dash-bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="dash-title">Leeds North depot</span>
+            <span class="live"><i aria-hidden="true"></i>Live <span data-clock>02:14</span></span>
+          </div>
+
+          <div class="dash-kpis">
+            <div class="kpi">
+              <p class="kpi-label">Site load</p>
+              <p class="kpi-value"><span data-load>312</span><small> / 400 kW</small></p>
+              <div class="meter"><span data-load-bar style="width: 78%"></span></div>
+            </div>
+            <div class="kpi">
+              <p class="kpi-label">Energy tonight</p>
+              <p class="kpi-value"><span data-energy>1,284</span><small> kWh</small></p>
+              <p class="kpi-sub"><span class="up">−24%</span> vs peak tariff</p>
+            </div>
+            <div class="kpi">
+              <p class="kpi-label">Ready by 06:30</p>
+              <p class="kpi-value"><span data-ready>18</span><small> / 22 vans</small></p>
+              <p class="kpi-sub">On track</p>
+            </div>
+          </div>
+
+          <ul class="vans" data-vans>
+            <li class="van" data-charge="64" data-route="142">
+              <span class="van-id">VN-014</span>
+              <span class="van-route">Route 7 · 142 km</span>
+              <span class="van-bar"><span></span></span>
+              <span class="van-pct">64%</span>
+              <span class="chip chip-charging">Charging</span>
+            </li>
+            <li class="van" data-charge="81" data-route="96">
+              <span class="van-id">VN-022</span>
+              <span class="van-route">Route 3 · 96 km</span>
+              <span class="van-bar"><span></span></span>
+              <span class="van-pct">81%</span>
+              <span class="chip chip-charging">Charging</span>
+            </li>
+            <li class="van" data-charge="37" data-route="188">
+              <span class="van-id">VN-009</span>
+              <span class="van-route">Route 12 · 188 km</span>
+              <span class="van-bar"><span></span></span>
+              <span class="van-pct">37%</span>
+              <span class="chip chip-charging">Charging</span>
+            </li>
+            <li class="van" data-charge="22" data-route="74" data-queued>
+              <span class="van-id">VN-031</span>
+              <span class="van-route">Route 1 · 74 km</span>
+              <span class="van-bar"><span></span></span>
+              <span class="van-pct">22%</span>
+              <span class="chip chip-queued">Queued</span>
+            </li>
+            <li class="van" data-charge="100" data-route="118">
+              <span class="van-id">VN-017</span>
+              <span class="van-route">Route 5 · 118 km</span>
+              <span class="van-bar"><span></span></span>
+              <span class="van-pct">100%</span>
+              <span class="chip chip-ready">Ready</span>
+            </li>
+          </ul>
+
+          <div class="dash-chart">
+            <div class="chart-head">
+              <span>Load tonight</span>
+              <span class="legend"><i class="lg-load"></i>Load <i class="lg-limit"></i>Grid limit</span>
+            </div>
+            <svg viewBox="0 0 400 90" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="load-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#c6ff3d" stop-opacity=".35"/>
+                  <stop offset="1" stop-color="#c6ff3d" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="16" x2="400" y2="16" stroke="#38e1ff" stroke-width="1.5" stroke-dasharray="5 5"/>
+              <path class="chart-area" d="M0 84 C30 80 40 52 70 46 S120 30 150 26 200 22 230 24 280 30 300 40 350 56 400 70 V90 H0Z" fill="url(#load-fill)"/>
+              <path class="chart-line" d="M0 84 C30 80 40 52 70 46 S120 30 150 26 200 22 230 24 280 30 300 40 350 56 400 70" fill="none" stroke="#c6ff3d" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="logos" aria-label="Fleets using Gridhaul (fictional)">
+          <p class="logos-label">Charging tonight for</p>
+          <ul class="logo-row">
+            <li class="logo logo-a">PARCELWAY</li>
+            <li class="logo logo-b">Northmile</li>
+            <li class="logo logo-c">BLUE/CRATE</li>
+            <li class="logo logo-d">kerbline</li>
+            <li class="logo logo-e">Fennick Freight</li>
+            <li class="logo logo-f">orbitbox</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" aria-label="Gridhaul in numbers">
+      <div class="container">
+        <ul class="stats-grid">
+          <li><p class="stat"><span data-count="140">140</span>+</p><p class="stat-label">depots charging tonight</p></li>
+          <li><p class="stat"><span data-count="31">31</span>%</p><p class="stat-label">lower energy bills on average</p></li>
+          <li><p class="stat"><span data-count="99.7" data-decimals="1">99.7</span>%</p><p class="stat-label">of vans ready by first departure</p></li>
+          <li><p class="stat"><span data-count="9">9</span></p><p class="stat-label">countries, one dashboard</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="product" aria-labelledby="product-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Product</p>
+          <h2 id="product-title">Your depot, on autopilot.</h2>
+          <p class="section-lede">Six things Gridhaul does every night while your team is asleep.</p>
+        </header>
+
+        <ul class="feature-grid">
+          <li class="card" data-glow data-reveal>
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h7"/></svg>
+            <h3>Smart scheduling</h3>
+            <p>Each van gets a charge plan built from tomorrow’s routes. Long routes charge first, short hops last.</p>
+          </li>
+          <li class="card" data-glow data-reveal style="--delay: 60ms">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/><path d="m2 7 4-3 6 4 8-5"/></svg>
+            <h3>Load balancing</h3>
+            <p>Stays under your site’s grid connection automatically. No more tripped breakers at six in the morning.</p>
+          </li>
+          <li class="card" data-glow data-reveal style="--delay: 120ms">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2M17 3.5l2 2M7 3.5l-2 2"/></svg>
+            <h3>Tariff optimisation</h3>
+            <p>Charging moves into the cheapest half-hours on your tariff, so you pay night rates for night work.</p>
+          </li>
+          <li class="card" data-glow data-reveal>
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 7h4M9 12l2 2 4-4"/></svg>
+            <h3>Works with your chargers</h3>
+            <p>Speaks OCPP 1.6J and 2.0.1, so 40+ charger brands connect in an afternoon. No rip-and-replace.</p>
+          </li>
+          <li class="card" data-glow data-reveal style="--delay: 60ms">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg>
+            <h3>Telematics sync</h3>
+            <p>Reads state of charge and mileage from your telematics, so plans update the moment a route changes.</p>
+          </li>
+          <li class="card" data-glow data-reveal style="--delay: 120ms">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M7 16V10M12 16V6M17 16v-3"/><path d="M19 4c-3 0-5 2-5 5 3 0 5-2 5-5Z"/></svg>
+            <h3>Cost &amp; CO₂ reports</h3>
+            <p>Monthly cost, kWh and carbon reports that your finance and sustainability teams will actually read.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section-alt" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-title">Live in a week, not a quarter.</h2>
+        </header>
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <span class="step-num">01</span>
+            <h3>Connect your chargers</h3>
+            <p>Point your chargers at Gridhaul over OCPP. Most depots are connected in a single afternoon.</p>
+            <span class="step-time">Day 1</span>
+          </li>
+          <li class="step" data-reveal style="--delay: 100ms">
+            <span class="step-num">02</span>
+            <h3>Import tomorrow’s routes</h3>
+            <p>Upload a CSV, connect your routing software, or let telematics fill it in automatically.</p>
+            <span class="step-time">Day 2</span>
+          </li>
+          <li class="step" data-reveal style="--delay: 200ms">
+            <span class="step-num">03</span>
+            <h3>Let it run</h3>
+            <p>Every night Gridhaul plans, charges and balances. You get one alert if a van won’t make it, and why.</p>
+            <span class="step-time">Every night after</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Savings calculator -->
+    <section class="section" id="savings" aria-labelledby="savings-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Savings calculator</p>
+          <h2 id="savings-title">What would your fleet save?</h2>
+          <p class="section-lede">Compared with running the same routes on diesel. Drag the sliders.</p>
+        </header>
+
+        <div class="calc" data-reveal>
+          <form class="calc-inputs" data-calc>
+            <div class="range">
+              <div class="range-head">
+                <label for="c-vans">Vans in your fleet</label>
+                <output for="c-vans" data-out="vans">40</output>
+              </div>
+              <input id="c-vans" name="vans" type="range" min="5" max="300" step="5" value="40">
+            </div>
+            <div class="range">
+              <div class="range-head">
+                <label for="c-km">Average km per van per day</label>
+                <output for="c-km" data-out="km">120 km</output>
+              </div>
+              <input id="c-km" name="km" type="range" min="40" max="300" step="5" value="120">
+            </div>
+            <div class="range">
+              <div class="range-head">
+                <label for="c-price">Electricity price</label>
+                <output for="c-price" data-out="price">24p / kWh</output>
+              </div>
+              <input id="c-price" name="price" type="range" min="10" max="45" step="1" value="24">
+            </div>
+            <div class="range">
+              <div class="range-head">
+                <label for="c-diesel">Diesel price</label>
+                <output for="c-diesel" data-out="diesel">£1.52 / litre</output>
+              </div>
+              <input id="c-diesel" name="diesel" type="range" min="1.2" max="2" step="0.01" value="1.52">
+            </div>
+            <p class="calc-assumptions">
+              Assumes 26 working days a month, 9.5 L/100 km for diesel vans and
+              0.28 kWh/km for electric ones. Smart charging saves 22% on electricity
+              by moving it off-peak.
+            </p>
+          </form>
+
+          <div class="calc-result" aria-live="polite">
+            <p class="result-label">Estimated saving per month</p>
+            <p class="result-big" data-result="monthly">£11,480</p>
+            <dl class="result-list">
+              <div><dt>Per year</dt><dd data-result="yearly">£137,755</dd></div>
+              <div><dt>From smart charging alone</dt><dd data-result="smart">£1,845 / mo</dd></div>
+              <div><dt>CO₂ avoided per year</dt><dd data-result="co2">302 t</dd></div>
+            </dl>
+            <a class="btn btn-primary btn-block" href="#pilot">Get a detailed estimate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section-alt" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <header class="section-head section-head-center" data-reveal>
+          <p class="eyebrow">Pricing</p>
+          <h2 id="pricing-title">Priced per charger. Not per headache.</h2>
+          <div class="billing-toggle">
+            <span id="bill-monthly" class="is-active">Monthly</span>
+            <button class="switch" type="button" role="switch" aria-checked="false" aria-labelledby="bill-label" data-billing>
+              <span class="sr-only" id="bill-label">Bill yearly</span>
+              <span class="switch-knob" aria-hidden="true"></span>
+            </button>
+            <span id="bill-yearly">Yearly <span class="save">save 20%</span></span>
+          </div>
+        </header>
+
+        <ul class="plans">
+          <li class="plan" data-reveal>
+            <h3>Starter</h3>
+            <p class="plan-desc">For a first depot going electric.</p>
+            <p class="plan-price"><span class="price" data-monthly="12" data-yearly="9.60">£12</span><span class="per">per charger / month</span></p>
+            <a class="btn btn-outline btn-block" href="#pilot">Start a pilot</a>
+            <ul class="plan-features">
+              <li>Up to 20 chargers</li>
+              <li>Smart scheduling</li>
+              <li>Load balancing</li>
+              <li>Email support</li>
+            </ul>
+          </li>
+          <li class="plan plan-featured" data-reveal style="--delay: 80ms">
+            <p class="plan-badge">Most popular</p>
+            <h3>Fleet</h3>
+            <p class="plan-desc">For operators running several hundred vans.</p>
+            <p class="plan-price"><span class="price" data-monthly="19" data-yearly="15.20">£19</span><span class="per">per charger / month</span></p>
+            <a class="btn btn-primary btn-block" href="#pilot">Start a pilot</a>
+            <ul class="plan-features">
+              <li>Unlimited chargers</li>
+              <li>Everything in Starter</li>
+              <li>Tariff optimisation</li>
+              <li>Telematics sync &amp; driver app</li>
+              <li>Priority support, 1-hour response</li>
+            </ul>
+          </li>
+          <li class="plan" data-reveal style="--delay: 160ms">
+            <h3>Enterprise</h3>
+            <p class="plan-desc">For national networks and multi-site estates.</p>
+            <p class="plan-price"><span class="price price-text">Let’s talk</span><span class="per">volume pricing</span></p>
+            <a class="btn btn-outline btn-block" href="#pilot">Contact sales</a>
+            <ul class="plan-features">
+              <li>Multi-site dashboards</li>
+              <li>SSO &amp; audit logs</li>
+              <li>Solar and battery integration</li>
+              <li>Dedicated success manager</li>
+              <li>99.95% uptime SLA</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Questions fleet managers ask us.</h2>
+          <p class="section-lede">Something else? The demo call is 20 minutes and has no slides.</p>
+        </header>
+
+        <div class="accordion" data-accordion data-reveal>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">Which chargers do you support?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+            <div class="acc-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div><p>Any charger that speaks OCPP 1.6J or 2.0.1, which covers more than 40 brands. If yours doesn’t, we’ll tell you on the first call rather than after the contract.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Do we need new hardware?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+            <div class="acc-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div><p>No. Gridhaul runs in the cloud and talks to the chargers you already have. Most depots are live within a week.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">What happens if the depot loses internet?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+            <div class="acc-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div><p>Every evening we push a safe fallback schedule to each charger. If the connection drops, vans keep charging on that plan and Gridhaul takes over again when it returns.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">How do you keep us under the grid limit?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+            <div class="acc-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div><p>We read site load every few seconds and adjust each charger’s power in real time, giving priority to the vans that leave first.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Is there a long contract?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+            <div class="acc-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div><p>Pilots are free for 30 days. After that you choose monthly or yearly billing, and monthly plans can be cancelled any time.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="pilot" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-box" data-reveal>
+          <h2 id="cta-title">Your vans already sit still all night. <span class="gradient-text">Put those hours to work.</span></h2>
+          <form class="cta-form" data-pilot novalidate>
+            <label class="sr-only" for="pilot-email">Work email</label>
+            <input id="pilot-email" name="email" type="email" placeholder="you@yourfleet.com" autocomplete="email" required aria-describedby="pilot-msg">
+            <button class="btn btn-primary" type="submit">Start a free pilot</button>
+          </form>
+          <p class="cta-msg" id="pilot-msg" aria-live="polite">Free for 30 days. No card needed.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top" aria-label="Gridhaul, back to top">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 2 28 9v14l-12 7-12-7V9z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M17.5 8 11 17.5h5L14.5 24 21 14.5h-5z" fill="#c6ff3d"/>
+        </svg>
+        <span>gridhaul</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="#product">Product</a></li>
+        <li><a href="#savings">Savings</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <p class="footer-credit">
+        Gridhaul is a fictional product and every customer shown is made up.
+        Concept site designed and built by <a href="https://github.com/minty-web">minty-web</a>, © <span data-year>2026</span>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
